@@ -24,7 +24,7 @@
 
     <header>
         <nav>
-            <div class="navbar  bg-base-100 shadow-sm">
+            <div class="navbar  bg-white shadow-sm p-5">
                 <div class="container flex justify-between items-center mx-auto">
                     <div class="flex-1 flex gap-3 items-center">
                         <img class="h-8 w-8" src="/assets/github-logo.png" alt="">
@@ -32,7 +32,7 @@
 
                     </div>
                     <div class="flex gap-2">
-                        
+
                         <input type="text" placeholder="Search issues.." class="input input-bordered w-24 md:w-auto" />
 
                         <button class="btn-primary btn"><i class="fa-solid fa-plus"></i> New issue</button>
@@ -42,6 +42,46 @@
         </nav>
     </header>
 
+    <!-- main section starts here -->
+    <main class="w-10/12 mx-auto">
+
+        <!-- Section of active btn -->
+
+        <section class=" container mx-auto mt-20">
+            <div class="p-3 bg-white shadow-sm flex gap-5">
+                <button class="btn btn-primary px-10">All</button>
+                <button class="btn btn-primary px-10">Open</button>
+                <button class="btn btn-primary px-10">Closed</button>
+            </div>
+        </section>
+
+        <!-- Dynamic card headers section -->
+        <section class="my-20 container mx-auto">
+            <!-- dynamic header section -->
+            <div class="flex justify-between items-center p-5 bg-white shadow-sm">
+                <!-- left div -->
+                <div class="flex gap-3 items-center">
+                    <img class="w-12 h-12 p-2 bg-base-300 rounded-full" src="/assets/Aperture.png" alt="">
+                    <div class="">
+                        <p class="font-bold">50 Issues</p>
+                        <p class="">Track and manage your project issues</p>
+                    </div>
+                </div>
+
+                <!-- Right side status div -->
+                <div class="flex gap-10">
+                    <p class=""><i class="fa-solid fa-circle pr-7" style="color: rgb(99, 230, 190);"></i>Open</p>
+                    <p class=""><i class="fa-solid fa-circle pr-7" style="color: rgb(224, 8, 57);"></i>Close</p>
+                </div>
+            </div>
+
+            <!-- issues cards container -->
+            <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                dummy card
+            </div>
+
+        </section>
+    </main>
     <!-- JS -->
     <script src="Script/dashboard.js"></script>
 </body>
