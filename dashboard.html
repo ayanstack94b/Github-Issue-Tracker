@@ -27,7 +27,7 @@
             <div class="navbar  bg-white shadow-sm p-5">
                 <div class="container flex justify-between items-center mx-auto">
                     <div class="flex-1 flex gap-3 items-center">
-                        <img class="h-8 w-8" src="/assets/github-logo.png" alt="">
+                        <img class="h-8 w-8" src="assets/github-logo.png" alt="">
                         <span class="font-bold text-xl">GitHub Issues Tracker</a>
 
                     </div>
@@ -56,14 +56,14 @@
         </section>
 
         <!-- Dynamic card headers section -->
-        <section class="my-20 container mx-auto">
+        <section class="mt-20 container mx-auto">
             <!-- dynamic header section -->
             <div class="flex justify-between items-center p-5 bg-white shadow-sm">
                 <!-- left div -->
                 <div class="flex gap-3 items-center">
-                    <img class="w-12 h-12 p-2 bg-base-300 rounded-full" src="/assets/Aperture.png" alt="">
+                    <img class="w-12 h-12 p-2 bg-base-300 rounded-full" src="assets/Aperture.png" alt="">
                     <div class="">
-                        <p class="font-bold">50 Issues</p>
+                        <p class="font-medium"><span id="total-issues" class="font-bold text-lg"></span> Issues</p>
                         <p class="">Track and manage your project issues</p>
                     </div>
                 </div>
@@ -71,13 +71,14 @@
                 <!-- Right side status div -->
                 <div class="flex gap-10">
                     <p class=""><i class="fa-solid fa-circle pr-7" style="color: rgb(99, 230, 190);"></i>Open</p>
-                    <p class=""><i class="fa-solid fa-circle pr-7" style="color: rgb(224, 8, 57);"></i>Close</p>
+                    <p class=""><i class="fa-solid fa-circle pr-7" style="color: rgb(201, 54, 201);"></i>Close</p>
                 </div>
             </div>
 
             <!-- issues cards container -->
-            <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-                dummy card
+            <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 bg-base-200 p-5">
+                <!-- card -->
+               
             </div>
 
         </section>
