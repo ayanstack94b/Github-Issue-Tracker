@@ -1,11 +1,15 @@
 let allIssues = [];
 
+const spinner = document.getElementById("loading-spinner");
+spinner.classList.remove("hidden");
+
 fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
   .then((res) => res.json())
   .then((data) => {
     allIssues = data.data;
     loadAllIssues(allIssues);
     setActive("tab-all");
+    spinner.classList.add("hidden");
   });
 
 function loadAllIssues(cardData) {
@@ -49,7 +53,7 @@ function loadAllIssues(cardData) {
 
     cardDiv.innerHTML = `
   
-  <div class="card h-full bg-base-100 shadow-sm ${borderClass} flex flex-col">
+  <div class="card h-full issue-card bg-base-100 shadow-sm ${borderClass} flex flex-col" data-id="${card.id}">
 
                     <div class="p-4 space-y-4 flex-1">
                         <div class="flex items-center justify-between">
@@ -112,4 +116,66 @@ document.getElementById("tab-closed").addEventListener("click", function () {
     return closedIssues.status === "closed";
   });
   loadAllIssues(tabClosed);
+});
+
+// modal logic
+document
+  .getElementById("issues-container")
+  .addEventListener("click", function (event) {
+    const card = event.target.closest(".issue-card");
+
+    if (!card) return;
+
+    const issueId = card.dataset.id;
+
+    loadSingleIssue(issueId);
+  });
+
+const statusElement = document.getElementById("modal-status");
+
+if (issue.status === "open") {
+  statusElement.innerText = "Open";
+  statusElement.className = "badge badge-success";
+} else {
+  statusElement.innerText = "Closed";
+  statusElement.className = "badge badge-secondary";
+}
+
+function loadSingleIssue(id) {
+  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      const issue = data.data;
+
+      document.getElementById("modal-title").innerText = issue.title;
+
+      document.getElementById("modal-description").innerText =
+        issue.description;
+
+      document.getElementById("modal-author").innerText = issue.author;
+
+      document.getElementById("modal-priority").innerText = issue.priority;
+
+      document.getElementById("modal-assignee").innerText = issue.assignee
+        ? issue.assignee
+        : "Unassigned";
+
+      document.getElementById("modal-date").innerText = new Date(
+        issue.createdAt,
+      ).toLocaleDateString();
+
+      document.getElementById("issue-modal").showModal();
+    });
+}
+
+const labelsContainer = document.getElementById("modal-labels");
+
+labelsContainer.innerHTML = "";
+
+issue.labels.forEach((label) => {
+  labelsContainer.innerHTML += `
+    <span class="px-3 py-1 bg-yellow-100 border border-gray-200 text-[#d97706] rounded-3xl font-semibold">
+      ${label}
+    </span>
+  `;
 });

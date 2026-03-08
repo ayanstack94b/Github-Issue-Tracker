@@ -74,12 +74,79 @@
                     <p class=""><i class="fa-solid fa-circle pr-7" style="color: rgb(201, 54, 201);"></i>Close</p>
                 </div>
             </div>
+            <!-- Loading spinner -->
+            <div id="loading-spinner" class="text-center py-10 hidden">
+                <span class="loading loading-bars loading-xl"></span>
+            </div>
 
             <!-- issues cards container -->
             <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 bg-base-200 p-5">
                 <!-- card -->
-
             </div>
+
+            <!-- Issue Modal -->
+            <dialog id="issue-modal" class="modal">
+                <div class="modal-box max-w-2xl">
+
+                    <!-- Title -->
+                    <h3 id="modal-title" class="font-bold text-2xl mb-3">
+                        Fix broken image uploads
+                    </h3>
+
+                    <!-- Status + author + date -->
+                    <div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
+                        <span id="modal-status" class="badge badge-success">Opened</span>
+                        <span>•</span>
+                        <span id="modal-author">Opened by Fahim Ahmed</span>
+                        <span>•</span>
+                        <span id="modal-date">22/02/2026</span>
+                    </div>
+
+                    <!-- Labels -->
+                    <div id="modal-labels" class="flex gap-3 flex-wrap mb-4">
+                        <span
+                            class="px-3 py-1 bg-red-100 border border-red-200 text-red-500 rounded-3xl text-sm font-semibold">
+                            BUG
+                        </span>
+
+                        <span
+                            class="px-3 py-1 bg-yellow-100 border border-yellow-200 text-yellow-700 rounded-3xl text-sm font-semibold">
+                            HELP WANTED
+                        </span>
+                    </div>
+
+                    <!-- Description -->
+                    <p id="modal-description" class="text-gray-600 leading-relaxed mb-6">
+                        The navigation menu doesn't collapse properly on mobile devices.
+                        Need to fix the responsive behavior.
+                    </p>
+
+                    <!-- Assignee + Priority -->
+                    <div class="grid grid-cols-2 gap-6 bg-gray-100 p-4 rounded-lg mb-6">
+
+                        <div>
+                            <p class="text-sm text-gray-500">Assignee:</p>
+                            <p id="modal-assignee" class="font-medium">Fahim Ahmed</p>
+                        </div>
+
+                        <div>
+                            <p class="text-sm text-gray-500">Priority:</p>
+                            <span id="modal-priority" class="px-3 py-1 bg-red-500 text-white text-sm rounded-xl">
+                                HIGH
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <!-- Close button -->
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn btn-primary">Close</button>
+                        </form>
+                    </div>
+
+                </div>
+            </dialog>
 
         </section>
     </main>
