@@ -118,7 +118,7 @@ document.getElementById("tab-closed").addEventListener("click", function () {
   loadAllIssues(tabClosed);
 });
 
-// modal logic
+// modal logic starts here
 document
   .getElementById("issues-container")
   .addEventListener("click", function (event) {
@@ -131,21 +131,21 @@ document
     loadSingleIssue(issueId);
   });
 
-const statusElement = document.getElementById("modal-status");
-
-if (issue.status === "open") {
-  statusElement.innerText = "Open";
-  statusElement.className = "badge badge-success";
-} else {
-  statusElement.innerText = "Closed";
-  statusElement.className = "badge badge-secondary";
-}
-
 function loadSingleIssue(id) {
   fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
     .then((res) => res.json())
     .then((data) => {
       const issue = data.data;
+
+      const statusElement = document.getElementById("modal-status");
+
+      if (issue.status === "open") {
+        statusElement.innerText = "Open";
+        statusElement.className = "badge badge-success";
+      } else {
+        statusElement.innerText = "Closed";
+        statusElement.className = "badge badge-secondary";
+      }
 
       document.getElementById("modal-title").innerText = issue.title;
 
@@ -164,18 +164,20 @@ function loadSingleIssue(id) {
         issue.createdAt,
       ).toLocaleDateString();
 
+      // Labels rendering
+      const labelsContainer = document.getElementById("modal-labels");
+
+      labelsContainer.innerHTML = "";
+
+      issue.labels.forEach((label) => {
+        labelsContainer.innerHTML += `
+          <span class="px-3 py-1 bg-yellow-100 border border-gray-200 text-[#d97706] rounded-3xl font-semibold">
+            ${label}
+          </span>
+        `;
+      });
+
+      // Open modal
       document.getElementById("issue-modal").showModal();
     });
 }
-
-const labelsContainer = document.getElementById("modal-labels");
-
-labelsContainer.innerHTML = "";
-
-issue.labels.forEach((label) => {
-  labelsContainer.innerHTML += `
-    <span class="px-3 py-1 bg-yellow-100 border border-gray-200 text-[#d97706] rounded-3xl font-semibold">
-      ${label}
-    </span>
-  `;
-});
