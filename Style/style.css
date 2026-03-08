@@ -11,3 +11,8 @@
   border-top: 4px solid #a855f7;
   border-radius: 8px;
 }
+
+.active-tab {
+  background-color: blue;
+  color: white;
+}
