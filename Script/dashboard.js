@@ -22,7 +22,7 @@ function loadAllIssues(cardData) {
   issuesContainer.innerHTML = "";
 
   cardData.forEach((card) => {
-    // console.log(card.labels);
+    console.log(card);
     const cardDiv = document.createElement("div");
 
     let borderClass = "";
@@ -72,9 +72,15 @@ function loadAllIssues(cardData) {
                         </div>
                     </div>
 
-                    <div class="shadow-sm p-4 border-t-gray-700">
-                        <p class="text-gray-400 text-sm font-medium">${card.author}</p>
-                        <p class="text-gray-400 text-sm font-medium">${card.updatedAt}</p>
+                    <div class="grid grid-cols-2 gap-3 shadow-sm  p-4 border-t-gray-700 space-y-4">
+                       <div class="text-start">
+                        <p class="pb-2 text-gray-400 text-xs font-bold">${card.author}</p>
+                        <p class="text-gray-400 text-xs font-bold">${card.createdAt}</p>
+                       </div>
+                       <div class="text-end">
+                       <p class="pb-2 text-gray-400 text-xs font-bold">${card.updatedAt}</p>
+                       <p class="text-gray-400 text-xs font-bold">${card.assignee}</p>
+                       </div>
                     </div>
 
                 </div>
