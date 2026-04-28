@@ -1,27 +1,176 @@
-1. What is the difference between var, let, and const?
-
-var, let and const are used to declare variables in JavaScript. The main difference is how they behave in scope and reassignment. var is the older way and it is function scoped, so it can sometimes create problems in large programs. le` is block scoped and it can be changed later but cannot be declared again in the same scope. const is also block scoped but the value cannot be reassigned after it is declared. In modern JavaScript developers mostly use let and const instead of var.
+# 🐞 Issue Tracker App
 
 ---
 
-2. What is the spread operator (...)?
+## 🚀 Live Demo
 
-The spread operator is written using three dots .... It is used to expand elements from an array or properties from an object. It helps to copy or combine arrays and objects in a simple way. The spread operator makes the code cleaner and easier to read compared to older methods.
-
----
-
-3. What is the difference between map(), filter(), and forEach()?
-
-These are JavaScript array methods used to work with arrays. forEach() is used to loop through each element of an array and perform some action, but it does not return a new array. map() is used when we want to change each element and create a new array with those changes.`filter() is used when we want to select only some elements from an array based on a condition.
+* 🌐 Live Site: https://ayanstack94b.github.io/Github-Issue-Tracker/
+* 📂 Repository: https://github.com/ayanstack94b/Github-Issue-Tracker
 
 ---
 
-4. What is an arrow function?
+## 📖 Project Overview
 
-An arrow function is a shorter way to write functions in JavaScript. It was introduced in ES6 to make code simpler and more readable. Arrow functions use the => syntax instead of the traditional function keyword. They are commonly used in modern JavaScript especially with array methods like map, filter, and forEach.
+This is a simple issue tracking web application where users can log in, view issues, and filter them based on status.
+
+The goal of this project was to practice handling UI states, filtering data, and building interactive components using JavaScript.
 
 ---
 
-5. What are template literals?
+## 🔐 Demo Credentials
 
-Template literals are a way to create strings in JavaScript using backticks instead of normal quotes. They allow variables and expressions to be inserted directly inside the string. This makes it easier to combine text and variables and is very useful when generating dynamic content in JavaScript.
+* Username: admin
+* Password: admin123
+
+---
+
+## ⚙️ Tech Stack
+
+* HTML
+* CSS (Tailwind / DaisyUI)
+* JavaScript (Vanilla)
+
+---
+
+## 🎨 UI Features
+
+### 🔑 Login Page
+
+* Logo, title, and subtitle
+* Username & password inputs
+* Sign-in button
+* Demo credentials provided
+* Styled based on Figma
+
+---
+
+### 🧭 Navbar
+
+* Website name/logo on the left
+* Search input with button on the right
+
+---
+
+### 📂 Tab Section
+
+* Tabs: **All / Open / Closed**
+* Displays issue count and status indicators
+* Active tab highlighting
+
+---
+
+### 🃏 Issue Cards
+
+* Displayed in a 4-column layout
+* Each card includes:
+
+  * Title
+  * Description
+  * Status
+  * Author
+  * Priority
+  * Label
+  * Created date
+
+---
+
+### 🎯 Modal View
+
+* Clicking a card opens a modal
+* Shows complete issue details
+
+---
+
+## ⚙️ Functional Features
+
+* Login validation using predefined credentials
+* Load and display issue data
+* Filter issues based on status (All / Open / Closed)
+* Search functionality for issues
+* Dynamic UI updates based on user interaction
+
+---
+
+## 🚀 Challenges Implemented
+
+* Top border color based on issue status:
+
+  * 🟢 Open → Green
+  * 🟣 Closed → Purple
+
+* Loading spinner during data load
+
+* Active tab state handling
+
+* Search functionality
+
+* Meaningful Git commits
+
+---
+
+## 📱 Responsiveness
+
+* Fully responsive for mobile and desktop
+* Layout adjusts based on screen size
+
+---
+
+## 🧠 JavaScript Concepts Used
+
+### 1️⃣ Difference between var, let, and const
+
+* `var` is function-scoped and can be re-declared
+* `let` is block-scoped and can be updated but not re-declared
+* `const` is block-scoped and cannot be reassigned
+
+---
+
+### 2️⃣ Spread Operator (...)
+
+The spread operator is used to expand elements of an array or object.
+
+Example:
+
+```js
+const arr = [1, 2, 3];
+const newArr = [...arr, 4];
+```
+
+---
+
+### 3️⃣ map(), filter(), forEach()
+
+* `map()` → returns a new array after transforming elements
+* `filter()` → returns a new array based on condition
+* `forEach()` → loops through array but does not return anything
+
+---
+
+### 4️⃣ Arrow Function
+
+A shorter syntax for writing functions.
+
+Example:
+
+```js
+const add = (a, b) => a + b;
+```
+
+---
+
+### 5️⃣ Template Literals
+
+Used to embed variables inside strings using backticks.
+
+Example:
+
+```js
+const name = "Ayon";
+console.log(`Hello ${name}`);
+```
+
+---
+
+## 📌 Final Note
+
+This project helped me improve my understanding of DOM manipulation, conditional rendering, and handling user interactions using JavaScript.
